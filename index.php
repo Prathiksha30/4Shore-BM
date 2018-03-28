@@ -10,7 +10,7 @@ include 'header.php';
     <div class="section-header">          
       <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Unemployment Rates</h2>
       <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-      <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Play around with the interactive map below to see which regional areas have the highest or lowest employment rates.</p>
+      <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Play around with the interactive map below to see which regional areas have the highest or lowest unemployment rates.</p>
     </div>
     <!-- Tableau section -->
     <div class='container' id='viz1521951465270' style='position: relative'>
@@ -103,17 +103,15 @@ include 'header.php';
     </div>
     <div class="row">          
       <div class="col-md-12">
-        <!-- Portfolio Controller/Buttons -->
-        <div class='container' id='viz1522212662968' style='position: relative'>
+        <!-- Tableau Section -->
+        <div class='container' id='viz1522234421209' style='position: relative'>
           <noscript>
-            <a href='#'> <img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Rent_6&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a>
+            <a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Rent_6&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a>
           </noscript>
           <object class='tableauViz'  style='display:none;'>
             <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-            <param name='embed_code_version' value='3' /> 
-            <param name='site_root' value='' />
-            <param name='name' value='Rent_6&#47;Dashboard2' />
-            <param name='tabs' value='no' />
+            <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+            <param name='name' value='Rent_6&#47;Dashboard2' /><param name='tabs' value='no' />
             <param name='toolbar' value='yes' />
             <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Rent_6&#47;Dashboard2&#47;1.png' /> 
             <param name='animate_transition' value='yes' />
@@ -125,11 +123,11 @@ include 'header.php';
           </object>
         </div>                
         <script type='text/javascript'>                    
-          var divElement = document.getElementById('viz1522212662968');                    
-          var vizElement = divElement.getElementsByTagName('object')[0];                    
-          vizElement.style.width='1000px';vizElement.style.height='827px';                    
-          var scriptElement = document.createElement('script');                    
-          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+          var divElement = document.getElementById('viz1522234421209');              
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          vizElement.style.width='1000px';vizElement.style.height='827px';              
+          var scriptElement = document.createElement('script'); 
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';      
           vizElement.parentNode.insertBefore(scriptElement, vizElement);                
         </script>
           <!--  <div class="section-header">          
