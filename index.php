@@ -3,7 +3,7 @@ include 'header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<body onload="initViz(); initViz2();">
 <!-- Unemployment Section Start -->
 <section id="services" class="section">
   <div class="container">
@@ -13,123 +13,30 @@ include 'header.php';
       <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Play around with the interactive map below to see which regional areas have the highest or lowest unemployment rates.</p>
     </div>
     <!-- Tableau section -->
-    <div class='container' id='viz1521951465270' style='position: relative'>
-      <noscript>
-        <a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard_1022&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a>
-      </noscript>
-      <object class='tableauViz'  style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-        <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
-        <param name='name' value='Dashboard_1022&#47;Dashboard1' />
-        <param name='tabs' value='no' /><param name='toolbar' value='yes' />
-        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard_1022&#47;Dashboard1&#47;1.png' />
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-      </object>
-    </div>                
-    <script type='text/javascript'>                    
-      var divElement = document.getElementById('viz1521951465270');                    
-      var vizElement = divElement.getElementsByTagName('object')[0];                    
-      vizElement.style.width='1000px';vizElement.style.height='827px';                    
-      var scriptElement = document.createElement('script');                    
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-    </script>
+    <div class='container' id= 'vizContainer2' style='position: relative'>
+     </div>
     <div class="section-header">          
       <hr class="lines wow zoomIn" data-wow-delay="0.3s">
       <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s"> Think the map is a bit confusing? We've got you covered. Click <a href= "unemploy.php"> Here </a> to view the data in a tabular format!</p>
     </div>
   </div>
 </section>
-<!-- Unemployment Section End -->
+<!-- Unemployment Section End -->   
 
-<!-- Industries - Repeat Services section -->
+<!-- Rent Section -->
 <section id="features" class="section">
   <div class="container">
     <div class="section-header">          
-      <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Industries Around Regional Victoria</h2>
-      <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-      <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s"> Use the filter options on the right to add in the industry and region of your choice to see the number of businesses in that region, on an interactive map. </p>
-      <p> Or use the filters below that to view it in a time series graph. </p>
-    </div>
-    <!-- Tableau section -->
-    <div class='container' id='viz1522212704727' style='position: relative'>
-      <noscript>
-        <a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;Industry_26&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a>
-      </noscript>
-      <object class='tableauViz'  style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-        <param name='embed_code_version' value='3' /> 
-        <param name='site_root' value='' />
-        <param name='name' value='Industry_26&#47;Dashboard1' />
-        <param name='tabs' value='no' />
-        <param name='toolbar' value='yes' />
-        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;Industry_26&#47;Dashboard1&#47;1.png' /> 
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-      </object>
-    </div>                
-    <script type='text/javascript'>                    
-      var divElement = document.getElementById('viz1522212704727');                    
-      var vizElement = divElement.getElementsByTagName('object')[0];                    
-      vizElement.style.width='1000px';vizElement.style.height='827px';                    
-      var scriptElement = document.createElement('script');                    
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-    </script>
-    <!-- Tableau end -->
-    <div class="section-header">          
-      <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-      <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s"> Think the map is a bit confusing? We've got you covered. Click <a href= "industry.php"> Here </a> to view the data in a tabular format!</p>
-    </div>
-  </div>
-</section>
-<!-- Industries Section End -->    
-
-<!-- Rent Section -->
-<section id="portfolios" class="section">
-  <div class="container">
-    <div class="section-header">          
-      <h2 class="section-title">Housing Around Regional Victoria</h2>
+      <h2 class="section-title">Industries & Housing in Regional Victoria</h2>
       <hr class="lines">
-      <p class="section-subtitle"> Use the filters on the right below, to select the type of housing and the region, which then displays a time series of rent prices through a few years. </p>
-      <p>Housing prices may help you decide which region has affordable options to live in.</p>
+      <p class="section-subtitle"> Use the filters on the left below, to select the region, or use the interactive map. </p>
+      <!-- <p>Housing prices may help you decide which region has affordable options to live in.</p> -->
     </div>
     <div class="row">          
       <div class="col-md-12">
-        <!-- Tableau Section -->
-        <div class='container' id='viz1522234421209' style='position: relative'>
-          <noscript>
-            <a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Rent_6&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a>
-          </noscript>
-          <object class='tableauViz'  style='display:none;'>
-            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-            <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
-            <param name='name' value='Rent_6&#47;Dashboard2' /><param name='tabs' value='no' />
-            <param name='toolbar' value='yes' />
-            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Rent_6&#47;Dashboard2&#47;1.png' /> 
-            <param name='animate_transition' value='yes' />
-            <param name='display_static_image' value='yes' />
-            <param name='display_spinner' value='yes' />
-            <param name='display_overlay' value='yes' />
-            <param name='display_count' value='yes' />
-            <param name='filter' value='publish=yes' />
-          </object>
-        </div>                
-        <script type='text/javascript'>                    
-          var divElement = document.getElementById('viz1522234421209');              
-          var vizElement = divElement.getElementsByTagName('object')[0];
-          vizElement.style.width='1000px';vizElement.style.height='827px';              
-          var scriptElement = document.createElement('script'); 
-          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';      
-          vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-        </script>
+        <!-- Tableau Section RESPONSIVE-->
+        <div class='container' id='vizContainer' style='position: relative'>
+          
           <!--  <div class="section-header">          
           <hr class="lines wow zoomIn" data-wow-delay="0.3s">
           <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s"> Think the map is a bit confusing? We've got you covered. Click <a href= "industry.php"> Here </a> to view the data in a tabular format!</p>
@@ -137,6 +44,7 @@ include 'header.php';
       </div>
     </section>
     <!-- Rent Section Ends --> 
+
 
     <!-- Footer Section Start -->
     <footer>          
@@ -152,11 +60,11 @@ include 'header.php';
                 <a href="#services">Unemployment Rates</a>
               </li>
               <li>
-                <a href="#features">Industries Around</a>
+                <a href="#features">Industries & Housing</a>
               </li>
-              <li>
+              <!-- <li>
                 <a href="#portfolios">Housing</a>
-              </li>
+              </li> -->
             </ul>
           </div>
           <div class="col-lg-6 col-sm-6 col-xs-12">
@@ -203,6 +111,6 @@ include 'header.php';
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>   
     <script src="js/main.js"></script>
-
+    
   </body>
   </html>
