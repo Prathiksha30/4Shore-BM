@@ -2,7 +2,7 @@ var workbook, viz;
 //initial visualisations, link to tableau dashboard and then call when page loads
 function initViz() {
   var containerDiv = document.getElementById("vizContainer"),
-  url = "https://public.tableau.com/views/19_04_2018/Dashboard1?:embed=y&:display_count=yes&publish=yes",
+  url = "https://public.tableau.com/views/22_04_2018/IndustryOverview?:embed=y&:display_count=yes&publish=yes",
   options = {
     hideTabs: true,
     onFirstInteractive: function () {
@@ -15,21 +15,7 @@ function initViz() {
   viz = new tableau.Viz(containerDiv, url, options); 
             // Create a viz object and embed it in the container div.         
 }
-function initViz2() {
-  var containerDiv = document.getElementById("vizContainer2"),
-  url = "http://public.tableau.com/views/Dashboard_1022/Dashboard1",
-  options = {
-    hideTabs: true,
-    onFirstInteractive: function () {
-      console.log("Run this code when the viz has finished loading.");
-      workbook = viz.getWorkbook();
-      activeSheet = workbook.getActiveSheet();
-    }
-  };
 
-  viz = new tableau.Viz(containerDiv, url, options); 
-            // Create a viz object and embed it in the container div.         
-}
 //function to switch between dashboard sheets
 function switchToMapTab() {
   workbook.activateSheetAsync("Sheet 1");

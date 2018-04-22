@@ -45,26 +45,11 @@ include 'php/connect_db.php';
               <a class="nav-link page-scroll" href="#hero-area">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="#services">Unemployment Rates</a>
+              <a class="nav-link page-scroll" href="visuals.php">Regional Victoria</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="#features">Industries & Housing</a>
+              <a class="nav-link page-scroll" href="publicAmenities.php">Public Amenities</a>
             </li>
-           <!--  <li class="nav-item">
-              <a class="nav-link page-scroll" href="#portfolios">Housing</a>
-            </li> -->
-           <!--  <li class="nav-item">
-              <a class="nav-link page-scroll" href="#pricing">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link page-scroll" href="#team">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link page-scroll" href="#blog">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link page-scroll" href="#contact">Contact</a>
-            </li> -->
           </ul>
         </div>
       </div>
@@ -75,26 +60,11 @@ include 'php/connect_db.php';
         <a class="page-scroll" href="#hero-area">Home</a>
       </li>
       <li>
-        <a class="page-scroll" href="#services">Unemployment Rates</a>
+        <a class="page-scroll" href="visuals.php">Regional Victoria</a>
       </li>
       <li>
-        <a class="page-scroll" href="#features">Industries Around</a>
+        <a class="page-scroll" href="publicAmenities">Public Amenities</a>
       </li>
-      <li>
-        <a class="page-scroll" href="#portfolios">Housing</a>
-      </li>
-     <!--  <li>
-        <a class="page-scroll" href="#pricing">Pricing</a>
-      </li>
-      <li>
-        <a class="page-scroll" href="#team">Team</a>
-      </li>
-      <li >
-        <a class="page-scroll" href="#blog">Blog</a>
-      </li>
-      <li>
-        <a class="page-scroll" href="#contact">Contact</a>
-      </li> -->
     </ul>
     <!-- Mobile Menu End -->
 
@@ -115,5 +85,4 @@ include 'php/connect_db.php';
     </div>           
   </header>
   <!-- Header Section End --> 
-  <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-  <script src="js/tableauViz.js"></script>
+  
