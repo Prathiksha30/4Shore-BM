@@ -63,7 +63,7 @@ include 'php/connect_db.php';
         <a class="page-scroll" href="visuals.php">Regional Victoria</a>
       </li>
       <li>
-        <a class="page-scroll" href="publicAmenities">Public Amenities</a>
+        <a class="page-scroll" href="publicAmenities.php">Public Amenities</a>
       </li>
     </ul>
     <!-- Mobile Menu End -->

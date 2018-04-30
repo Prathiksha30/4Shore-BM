@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="css/responsive.css">
     <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
     <script src="js/tableauViz.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   </head>
 <header>
 <nav class="navbar navbar-expand-lg scrolling-navbar indigo">
@@ -41,7 +40,7 @@
                 <a class="nav-link page-scroll" href="index.php" style="color: #000000">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll" style="background: #61D2B4">Regional Victoria</a>
+                <a class="nav-link page-scroll" style="color: #000000">Regional Victoria</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="publicAmenities.php" style="color: #000000">Public Amenities</a>
@@ -59,52 +58,26 @@
               <a class="page-scroll" href="visuals.php">Regional Victoria</a>
             </li>
             <li>
-              <a class="page-scroll" href="publicAmenities.php">Public Amenities</a>
+              <a class="page-scroll" href="publicAmenities">Public Amenities</a>
             </li>
           </ul>
         <!-- Mobile Menu End -->
 
       </nav>
 </header>
-
-<body>
+<body onload="mainViz();">
 <section id="services" class="section">
     <div class="section-header">
       <div class="video-promo-content text-center">
         <h5 class="section-title2 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
           Use the Interactive Visualisations Below
         </h5>
-        <h5 class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-          Start by choosing an indusrty and view the Top 10 suburbs for that industry or use the map to explore the other suburbs.
-        </h5>
         <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-        <h5 class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-        </h5>
-        <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background: #61D2B4">Choose an industry
-            <span class="caret"> </span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Construction</a></li>
-            <li><a href="#">Manufcturing</a></li>
-            <li><a href="#">Mining</a></li>
-          </ul>
-        </div>
         <h5 class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
         </h5>
       </div>
       <!-- TABLEAU SECTION -->
       <div class="container" id="vizContainer" style="position: relative">
-      <script type="text/javascript">
-
-        /*mainViz();
-        filterSingleValue();*/
-        $(".dropdown-menu").click(function(){
-          $(this).parents(".dropdown").find('.btn-primary').text($(this).text);
-          $(this).parents(".dropdown").find('.btn-primary').val($(this).text);
-          mainViz($(this).text());
-        });
-      </script>
       </div>
     </div>
 </section> 

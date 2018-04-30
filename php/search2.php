@@ -1,6 +1,6 @@
 <?php
     /*$connect = mysqli_connect('localhost', 'root', '', 'test');*/
-    include 'php/connect_db.php';
+    include 'connect_db.php';
 
 /*if( $connect ){
     echo 'Yes. It is working';

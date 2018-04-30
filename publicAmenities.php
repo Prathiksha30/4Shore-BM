@@ -28,7 +28,7 @@
     <!-- Header Section Start -->
     <header id="customHero" data-stellar-background-ratio="0.5">
       <!-- Navbar Start -->
-      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+      <nav class="navbar navbar-expand-lg scrolling-navbar indigo">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -40,13 +40,13 @@
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto w-100 justify-content-end">
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="index.html">Home</a>
+                <a class="nav-link page-scroll" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#services">Services</a>
+                <a class="nav-link page-scroll" href="visuals.php">Regional Victoria</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll">Public Amenities</a>
+                <a class="nav-link page-scroll active">Public Amenities</a>
               </li>
             </ul>
           </div>
@@ -55,13 +55,13 @@
         <!-- Mobile Menu Start -->
          <ul class="mobile-menu">
            <li>
-              <a class="page-scroll" href="index.html">Home</a>
+              <a class="page-scroll" href="index.php">Home</a>
             </li>
             <li>
               <a class="page-scroll" href="visuals.php">Regional Victoria</a>
             </li>
             <li>
-              <a class="page-scroll" href="publicAmenities">Public Amenities</a>
+              <a class="page-scroll" href="publicAmenities.php">Public Amenities</a>
             </li>
           </ul>
         <!-- Mobile Menu End -->
@@ -76,7 +76,7 @@
               <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"> Search by suburb or regions </p>
               <!-- FOR SEARCH -->
                 <div class="active-cyan-4 mb-4" id="search_text">
-                  <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="search" name="search">
+                  <input class="form-control" type="text" placeholder="Ex: Ballarat" aria-label="Search" id="search" name="search">
               </div>
               <!-- <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Download</a> -->
             </div>
