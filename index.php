@@ -8,29 +8,34 @@ include 'header.php';
     <section id="services" class="section">
       <div class="container">
         <div class="section-header">          
-          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Explore your new start in regional Victoria</h2>
+         <!--  <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Explore your new start in regional Victoria</h2>
           <hr class="lines wow zoomIn" data-wow-delay="0.3s">
           <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Planning to start your career in regional Victoria? Make yourself aware of the numerous industries in regional Victoria and find information about rental prices and more!</p>
-        </div>
+         -->
+         </div>
         <div class="row">
           <div class="col-md-6 col-sm-6">
             <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
               <div class="icon">
-                <a href= "visuals.php"><i class="lnr lnr-chart-bars"></i>
-                <script type="text/javascript"> mainViz(); </script></a>
+                <a href= "regVic.html"><i class="lnr lnr-chart-bars"></i>
+                <script type="text/javascript"> //mainViz(); </script></a>
               </div>
-              <h4>Regional Victoria</h4>
-              <p>Use our interactive visuals to look at the industries, rental prices and unemployment rates.</p>
+              <h4>Search by Region</h4>
+              <p>Have a place in mind? Use our interactive visuals to look at an overview of a specific region in Victoria.</p>
             </div>
           </div>
+          
           <div class="col-md-6 col-sm-6">
             <div class="item-boxes wow fadeInDown" data-wow-delay="0.8s">
+            <a href= "industries.php">
               <div class="icon">
-                <a href= "publicAmenities.php"><i class="lnr lnr-magnifier"></i></a>
+                <i class="lnr lnr-magnifier"></i>
               </div>
-              <h4>Public Amenities</h4>
-              <p>Find sport facilities or recreation centres in regional Victoria.</p>
+              </a>
+              <h4>Search by Industry</h4>
+              <p>Don't know where to begin but have an Industry in mind? Head here to view regions that are popular!</p>
             </div>
+            
           </div>
           
         </div>

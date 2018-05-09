@@ -1,3 +1,4 @@
+
 <?php
     /*$connect = mysqli_connect('localhost', 'root', '', 'test');*/
     include 'connect_db.php';
@@ -6,6 +7,7 @@
     echo 'Yes. It is working';
 }*/
     //$connect = mysqli_connect('fshore.cxjhwwvvzrvf.ap-southeast-2.rds.amazonaws.com', 'jkang94', 'HjPr!4ShoreK1.08', 'beyond_melb');
+
 global $conn;
 $search = $_POST['search'];
 if(!empty($search)){
@@ -15,7 +17,7 @@ if(!empty($search)){
        // die('QUERY FAILED' . mysqli_error($connect));
     }?>
     <div class="row">
-            
+
     <?php
     while( $row = mysqli_fetch_array($search_query) ){
         $facility = $row['facility_name'];

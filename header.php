@@ -45,10 +45,10 @@ include 'php/connect_db.php';
               <a class="nav-link page-scroll" href="#hero-area">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="visuals.php">Regional Victoria</a>
+              <a class="nav-link page-scroll" href="regVic.html">Regional Victoria</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="publicAmenities.php">Public Amenities</a>
+              <a class="nav-link page-scroll" href="industries.php">Industries</a>
             </li>
           </ul>
         </div>
@@ -60,10 +60,10 @@ include 'php/connect_db.php';
         <a class="page-scroll" href="#hero-area">Home</a>
       </li>
       <li>
-        <a class="page-scroll" href="visuals.php">Regional Victoria</a>
+        <a class="page-scroll" href="regVic.html">Regional Victoria</a>
       </li>
       <li>
-        <a class="page-scroll" href="publicAmenities.php">Public Amenities</a>
+        <a class="page-scroll" href="industries.php">Industries</a>
       </li>
     </ul>
     <!-- Mobile Menu End -->
@@ -74,10 +74,8 @@ include 'php/connect_db.php';
     <div class="row justify-content-md-center">
       <div class="col-md-10">
         <div class="contents text-center">
-          <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Beyond Melbourne</h1>
-          <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">Unemployed and helpless in regional Victoria? You've reached the right pitstop- here you can
-            see how unemployment rates vary in different regions and where industries in your line of skilled work may have set up, and then look
-            at housing prices if you're thinking about making the move to another region!</p>
+          <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Explore your new start in regional Victoria</h1>
+          <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">Planning to start your career in regional Victoria? Make yourself aware of the numerous industries in regional Victoria and find information about rental prices and more!</p>
             <a href="#services" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Scroll Down</a>
           </div>
         </div>

@@ -1,8 +1,11 @@
+<?php
+	include '/php/connect_db.php';
+?>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
+<html>
+<head>
+	<title>Regional Victoria</title>
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content="Bootstrap, Parallax, Template, Registration, Landing">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -21,11 +24,38 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">    
     <link rel="stylesheet" href="css/responsive.css">
+    <!-- JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function Regions() {
+			$('#region').empty();
+			$('#region').append("<option>Loading......</option>");
+			$.ajax({
+				type:"GET",
+				url:"php/industryName.php", //php file that returns JSON data of region names
+				contentType:"application/json; charset=utf-8",
+				dataType:"json",
+				success:function(data){
+					$('#region').empty();
+					$('#region').append("<option value='0' style='background-color:#000000bd'>--Select Region--</option>");
+					$.each(data, function(i, item){
+						$('#region').append('<option value="'+data[i]+'"style="background-color:#000000bd">'+ data[i].Industry+'</option>');
+						//$('#region').append('<li>'+ data[i].LGA+'</li>');
+					});
+				},
+				complete: function(){
 
-  </head>
-  <body>
-   
-    <!-- Header Section Start -->
+				}
+			});
+		}
+
+		$(document).ready(function(){
+			Regions(); //call function Regions when page loads
+		});
+	</script>
+</head>
+<body>
+<!-- Header Section Start -->
     <header id="customHero" data-stellar-background-ratio="0.5">
       <!-- Navbar Start -->
       <nav class="navbar navbar-expand-lg scrolling-navbar indigo">
@@ -43,10 +73,10 @@
                 <a class="nav-link page-scroll" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="visuals.php">Regional Victoria</a>
+                <a class="nav-link page-scroll" href="regVic.html">Regional Victoria</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll active">Public Amenities</a>
+                <a class="nav-link page-scroll active">Industries</a>
               </li>
             </ul>
           </div>
@@ -58,10 +88,10 @@
               <a class="page-scroll" href="index.php">Home</a>
             </li>
             <li>
-              <a class="page-scroll" href="visuals.php">Regional Victoria</a>
+              <a class="page-scroll" href="regVic.html">Regional Victoria</a>
             </li>
             <li>
-              <a class="page-scroll" href="publicAmenities.php">Public Amenities</a>
+              <a class="page-scroll" href="#">Industries</a>
             </li>
           </ul>
         <!-- Mobile Menu End -->
@@ -72,17 +102,18 @@
         <div class="row justify-content-md-center">
           <div class="col-md-10">
             <div class="contents text-center">
-              <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Sports and Recreation Facilities Around</h1>
-              <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"> Search by suburb or regions </p>
+              <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Choose an Industry</h1>
+              <!-- <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"> Search by suburb or regions </p> -->
               <!-- FOR SEARCH -->
-                <div class="active-cyan-4 mb-4" id="search_text">
-                  <input class="form-control" type="text" placeholder="Ex: Ballarat" aria-label="Search" id="search" name="search">
-              </div>
+                <div class="form-group">
+					<select class = "form-control" id="region" style="padding: 0px"></select>
+				</div>
               <!-- <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Download</a> -->
             </div>
           </div>
         </div> 
       </div> 
+      
       </header>
       <section id="blog" class="section">
       
@@ -94,23 +125,9 @@
         </div>
       </section>          
     </header>
-<?php
-include 'footer.html';
-?>
-<script>
-    $(document).ready(function(){
-      $('#search').keyup(function(){
-        var search = $('#search').val();
-        $.ajax({
-          url:'php/search2.php',
-          data:{search, search},
-          type:'POST',
-          success:function(data){
-            if(!data.error){
-              $('#result').html(data);
-            }
-          }
-        });
-      });
-    });
-</script>
+
+
+	
+	
+</body>
+</html>

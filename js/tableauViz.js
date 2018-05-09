@@ -23,17 +23,17 @@ function filterSingleValue() {
     tableau.FilterUpdateType.REPLACE);
   console.log("success filter");
 }  
-function mainViz(something) {
+function mainViz() {
   /*var some = "Construction";*/
   var containerDiv = document.getElementById("vizContainer"),
-  url = "https://public.tableau.com/views/it3speedtest/Dashboard1",
-  //url = "https://public.tableau.com/views/22_04_2018/IndustryOverview",
+ // url = "https://public.tableau.com/views/it3speedtest/Dashboard1",
+  url = "https://public.tableau.com/views/22_04_2018/IndustryOverview",
   //url = "https://public.tableau.com/shared/76KQQSRB6?:display_count=yes",
   options = {
     hideTabs: false,
-    Industry: something,
+    //Industry: something,
     onFirstInteractive: function () {
-      console.log("Run this code when the viz has finished loading." + something);
+      console.log("Run this code when the viz has finished loading.");
       workbook = viz.getWorkbook();
       activeSheet = workbook.getActiveSheet();
     }
