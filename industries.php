@@ -27,6 +27,9 @@
     <!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
+  
+ /* var x = document.getElementById("mydiv");
+  x.style.display = "none";*/
 		function Regions() {
 			$('#region').empty();
 			$('#region').append("<option>Loading......</option>");
@@ -37,7 +40,7 @@
 				dataType:"json",
 				success:function(data){
 					$('#region').empty();
-					$('#region').append("<option value='0' style='background-color:#000000bd'>--Select Region--</option>");
+					$('#region').append("<option value='0' style='background-color:#000000bd'>--Select Industry--</option>");
 					$.each(data, function(i, item){
 						$('#region').append('<option value="'+data[i]+'"style="background-color:#000000bd">'+ data[i].Industry+'</option>');
 						//$('#region').append('<li>'+ data[i].LGA+'</li>');
@@ -48,9 +51,23 @@
 				}
 			});
 		}
+     function getData(sel)
+    {
+      var data="";
+      var text = "";
+        data = (sel.options[sel.selectedIndex].text);
+        text = encodeURIComponent(data);
+        console.log(text);
+        console.log(data);
+        iframe = document.getElementById('myIframe');
+        iframe.src = "https://jkang94.shinyapps.io/prats/" + '?Industry=' +text;
+        //x.style.display = "block";
+    }
 
 		$(document).ready(function(){
 			Regions(); //call function Regions when page loads
+      iframe = document.getElementById('myIframe');
+        iframe.src = "";
 		});
 	</script>
 </head>
@@ -106,7 +123,7 @@
               <!-- <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"> Search by suburb or regions </p> -->
               <!-- FOR SEARCH -->
                 <div class="form-group">
-					<select class = "form-control" id="region" style="padding: 0px"></select>
+					<select class = "form-control" id="region" style="padding: 0px" onchange="getData(this);"></select>
 				</div>
               <!-- <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Download</a> -->
             </div>
@@ -116,18 +133,17 @@
       
       </header>
       <section id="blog" class="section">
-      
+      <div class="mydiv">
       <div class="container">
-      
+      <div class="embed-responsive embed-responsive-16by9">
+         <iframe id="myIframe" class="embed-responsive-item" allowfullscreen></iframe>
+      </div>
+      </div>
         <div class="text">
           <h6 id="result"></h6>
           
         </div>
       </section>          
     </header>
-
-
-	
-	
 </body>
 </html>

@@ -111,12 +111,18 @@
       
       </header>
       <section id="blog" class="section">
+      <div class="container">
+      <div class="embed-responsive embed-responsive-16by9">
+         <iframe class="embed-responsive-item" src="https://jkang94.shinyapps.io/5120/"  allowfullscreen></iframe>
+      </div>
+      </div>
       
       <div class="container">
       
         <div class="text">
           <h6 id="result"></h6>
-          
+          <h6> Hello </h6>
+        </div>
         </div>
       </section>          
     </header>
@@ -126,3 +132,45 @@
 	
 </body>
 </html>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#region').typeahead({
+    source: function(query, result)
+    {
+       $.ajax({
+          url:"php/testing.php",
+          method:"POST",
+          data:{query:query},
+          dataType:"json",
+          success:function(data)
+          {
+            result($.map(data, function(item){
+              return item;
+            }));
+          }
+      })
+    }
+  });
+  $('#region').keyup(function(e){
+    if(e.keyCode == 13){
+      var search = $('#region').val();
+      console.log(search);
+      $.ajax({
+        url:'php/info.php',
+        data:{search, search},
+        type:'POST',
+        success:function(data){
+          if(!data.error){
+            //iframe = document.getElementById('myIframe');
+            //iframe.src = iframe.src + '?Name=' +search;
+            $('#result').html(data);
+          }
+          else{
+            x.style.display ="none";
+          }
+        }
+      });
+    }
+  });
+})
+</script>

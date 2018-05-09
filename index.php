@@ -21,7 +21,7 @@ include 'header.php';
                 <script type="text/javascript"> //mainViz(); </script></a>
               </div>
               <h4>Search by Suburb</h4>
-              <p>Have a place in mind? Use our interactive visuals to look at an overview of a specific suburb in Regional Victoria.</p>
+              <p>Have a place in mind? Search for a specific suburb and find hospitals, schools and sport facilities in the area.</p>
             </div>
           </div>
           

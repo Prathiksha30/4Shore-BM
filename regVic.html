@@ -69,7 +69,7 @@
               <!-- <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"> Search by suburb or regions </p> -->
               <!-- FOR SEARCH -->
                 <div class="active-cyan-4 mb-4" id="search_text">
-                  <input type="text" name="country" id="region" class="form-control input-lg" autocomplete="off" placeholder="Type Suburb Here. Ex: Ballarat" />
+                  <input type="text" name="country" id="region" class="form-control input-lg" autocomplete="off" placeholder="Start by typing a suburb here. Ex: Ballarat" />
               </div>
               <!-- <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Download</a> -->
             </div>
@@ -78,13 +78,16 @@
       </div> 
       </header>
   <br /><br />
-<section id="portfolios" class="section">
+
+
+<section id ="portfolios" class="section">
+
       <div class="container">
         <div id="mydiv">
           <div class="section-header">
-            <h2 class="section-title"> Public Amenities in the Suburb </h2>
             <hr class="lines">
             <p class="section-subtitle"> You'll find schools, hospitals and sports/recreation facilities listed below </p>
+            
           </div>
           <div class="row">
             <div class="col-md-12">
@@ -102,6 +105,8 @@
           <h6 id="result"></h6>
           
         </div>
+
+        </div>
       </section>   
 
  </body>
@@ -110,25 +115,25 @@
 include 'footer.html';
 ?>
 <script>
-$(document).ready(function(){
- var x = document.getElementById("mydiv");
- x.style.display = "none";
- $('#region').typeahead({
-  source: function(query, result)
-  {
-   $.ajax({
-    url:"php/testing.php",
-    method:"POST",
-    data:{query:query},
-    dataType:"json",
-    success:function(data)
+  $(document).ready(function(){
+   var x = document.getElementById("mydiv");
+   x.style.display = "none";
+   $('#region').typeahead({
+    source: function(query, result)
     {
-     result($.map(data, function(item){
-      return item;
-     }));
-    }
+     $.ajax({
+      url:"php/testing.php",
+      method:"POST",
+      data:{query:query},
+      dataType:"json",
+      success:function(data)
+      {
+       result($.map(data, function(item){
+        return item;
+      }));
+     }
    })
-  }
+   }
  });
 
 $('#region').keyup(function(e){
@@ -144,6 +149,7 @@ $('#region').keyup(function(e){
               if(!data.error){
                 $('#result').html(data);
                 x.style.display ="block";
+                
               }
               else{
                 x.style.display ="none";
@@ -247,3 +253,21 @@ function hospFunc(){
 
 </script>
 
+<style type="text/css">
+  .typeahead{
+    background-color: #fff;
+    min-width: 100%;
+    max-height: 130px;
+  overflow-y: auto;
+}
+
+.typeahead li{
+    padding: 5px;
+    overflow: auto;
+    font-size: 16px;
+}
+
+.typeahead li.active{
+    background-color: #eee;
+}
+</style>
