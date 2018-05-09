@@ -17,11 +17,11 @@ include 'header.php';
           <div class="col-md-6 col-sm-6">
             <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
               <div class="icon">
-                <a href= "regVic.html"><i class="lnr lnr-chart-bars"></i>
+                <a href= "regVic.html"><i class="lnr lnr-map"></i>
                 <script type="text/javascript"> //mainViz(); </script></a>
               </div>
-              <h4>Search by Region</h4>
-              <p>Have a place in mind? Use our interactive visuals to look at an overview of a specific region in Victoria.</p>
+              <h4>Search by Suburb</h4>
+              <p>Have a place in mind? Use our interactive visuals to look at an overview of a specific suburb in Regional Victoria.</p>
             </div>
           </div>
           
@@ -29,7 +29,7 @@ include 'header.php';
             <div class="item-boxes wow fadeInDown" data-wow-delay="0.8s">
             <a href= "industries.php">
               <div class="icon">
-                <i class="lnr lnr-magnifier"></i>
+                <i class="lnr lnr-briefcase"></i>
               </div>
               </a>
               <h4>Search by Industry</h4>

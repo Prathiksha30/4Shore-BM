@@ -1,0 +1,56 @@
+<?php
+include 'connect_db.php';
+global $conn;
+$num_rows = 0;
+$search = $_POST['search'];
+if(!empty($search)){
+	$query = "SELECT * FROM school_final WHERE SA2_Name LIKE '$search%' AND School_Type LIKE 'Primary'";
+	$search_query = mysqli_query($conn, $query);
+	if(!$search_query){
+       // die('QUERY FAILED' . mysqli_error($connect));
+	}?>
+	<div class="row">
+
+		<?php
+		while( $row = mysqli_fetch_array($search_query) ){
+			$num_rows++;
+			$school = $row['School_Name'];
+			$type = $row['School_Type'];
+			$Name = $row['SA2_Name'];
+			$addP = $row['Address_Postcode'];
+			$edu = $row['Education_Sector'];
+			$lat = $row['Y'];
+			$long = $row['X'];
+			?>
+			<!-- <div class="col-lg-6 col-sm-6 col-xs-6 box-item"> -->
+			<div class = "col-md-6 col-sm-6">
+				<div class="single-team">
+					<div class="team-details" style="text-align:left">
+						<div class="team-inner">
+							<ul class="list-unstyled"> 
+								<?php echo "<li><strong>{$school}</strong></li>"?>
+								<?php echo "<li>{$Name}</li>"?>
+								<?php echo "<li>{$addP}</li>"?>
+								<?php echo "<li>{$type}</li>"?>
+								<?php echo "<li> <i class='lnr lnr-map-marker'>
+								<a target='_blank' href='http://maps.google.com/maps?q= $lat,$long'>Open in maps</a>
+							</i>"?>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<br><br>
+		</div>
+		<?php
+	}
+		if($num_rows== 0){ ?>
+			<div class="row">
+				<div class="section-header">
+					<center><p class="section-subtitle"> Sorry, we couldn't find any results for schools in <strong><?php echo $search?></strong>.</p></center>
+				</div>
+			</div>
+	<?php }
+		
+ 
+}?>
+</div>

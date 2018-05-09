@@ -27,31 +27,26 @@
     <!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		function Regions() {
-			$('#region').empty();
-			$('#region').append("<option>Loading......</option>");
-			$.ajax({
-				type:"GET",
-				url:"php/industryName.php", //php file that returns JSON data of region names
-				contentType:"application/json; charset=utf-8",
-				dataType:"json",
-				success:function(data){
-					$('#region').empty();
-					$('#region').append("<option value='0' style='background-color:#000000bd'>--Select Region--</option>");
-					$.each(data, function(i, item){
-						$('#region').append('<option value="'+data[i]+'"style="background-color:#000000bd">'+ data[i].Industry+'</option>');
-						//$('#region').append('<li>'+ data[i].LGA+'</li>');
-					});
-				},
-				complete: function(){
-
-				}
-			});
-		}
-
 		$(document).ready(function(){
-			Regions(); //call function Regions when page loads
-		});
+   
+   	$('#region').typeahead({
+    source: function(query, result)
+    {
+      $.ajax({
+	      url:"php/testing.php",
+	      method:"GET",
+	      data:{query:query},
+	      dataType:"json",
+	      success:function(data)
+	      {
+		       result($.map(data, function(item){
+		        return item;
+	       }));
+      	}
+     })
+    }
+   });
+  });
 	</script>
 </head>
 <body>
@@ -102,12 +97,12 @@
         <div class="row justify-content-md-center">
           <div class="col-md-10">
             <div class="contents text-center">
-              <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Choose an Industry</h1>
+              <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Explore Regional Victoria</h1>
               <!-- <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"> Search by suburb or regions </p> -->
               <!-- FOR SEARCH -->
-                <div class="form-group">
-					<select class = "form-control" id="region" style="padding: 0px"></select>
-				</div>
+                 <div class="active-cyan-4 mb-4" id="search_text">
+                  <input type="text" name="country" id="region" class="form-control input-lg" autocomplete="off" placeholder="Type Region Name" />
+              </div>
               <!-- <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Download</a> -->
             </div>
           </div>
