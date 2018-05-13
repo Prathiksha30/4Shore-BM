@@ -1,39 +1,36 @@
 <?php 
 include 'connect_db.php';
 global $conn;
-//$search = $_GET['query'];
-//$search = "Geelong";
 $search = $_POST['search'];
 if(isset($_POST['search']))
-{ ?>
-
+{ 
+  ?>
 <div class="row">
-    <?php
+  <?php
     foreach (getHospData() as $hr ): 
-        $lat = $hr['Y'];
-        $long = $hr['X'];
-        ?>
-		<!-- <div class="col-lg-6 col-sm-6 col-xs-6 box-item"> -->
-		<div class = "col-md-6 col-sm-6">
-			<div class="single-team hosp">
-				<div class="team-details" style="text-align:left">
-					<div class="team-inner">
-				        <ul class="list-unstyled"> 
-				             <?php echo "<li><strong>{$hr['LabelName']}</strong></li>"?>
-				             <?php echo "<li>{$hr['SA2_Name']}</li>"?>
-				             <?php echo "<li>{$hr['Postcode']}</li>"?>
-				             <?php echo "<li>{$hr['Type']}</li>"?>
-				             <?php echo "<li> <i class='lnr lnr-map-marker'>
-				             <a href='http://maps.google.com/maps?q= $lat,$long'>Open in maps</a>
-				             </i>"?>
-				        </ul>
-			        </div>
-		        </div>
-	        </div>
-        <br><br>
-        </div>     
-    <?php
-    endforeach; ?>
+    $lat = $hr['Y'];
+    $long = $hr['X'];
+  ?>
+	<!-- <div class="col-lg-6 col-sm-6 col-xs-6 box-item"> -->
+	<div class = "col-md-6 col-sm-6">
+		<div class="single-team hosp">
+			<div class="team-details" style="text-align:left">
+				<div class="team-inner">
+		      <ul class="list-unstyled"> 
+		        <?php echo "<li><strong>{$hr['LabelName']}</strong></li>"?>
+		        <?php echo "<li>{$hr['SA2_Name']}</li>"?>
+		        <?php echo "<li>{$hr['Postcode']}</li>"?>
+		        <?php echo "<li>{$hr['Type']}</li>"?>
+		        <?php echo "<li> <i class='lnr lnr-map-marker'> <a href='http://maps.google.com/maps?q= $lat,$long'>Open in maps</a></i>"?>
+				  </ul>
+			  </div>
+		  </div>
+	  </div>
+    <br><br>
+  </div>     
+<?php
+  endforeach;
+?>
 </div>  
 <?php 
 } 

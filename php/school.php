@@ -10,7 +10,6 @@ if(!empty($search)){
        // die('QUERY FAILED' . mysqli_error($connect));
 	}?>
 	<div class="row">
-
 		<?php
 		while( $row = mysqli_fetch_array($search_query) ){
 			$num_rows++;

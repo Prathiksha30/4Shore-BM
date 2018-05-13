@@ -42,12 +42,12 @@ if(!empty($search)){
 		</div>
 		<?php
 		if($num_rows== 0){ ?>
-			<div class="row">
-				<div class="section-header">
-					<center><p class="section-subtitle"> Sorry, we couldn't find any results for hospitals in <strong><?php echo $search?></strong>.</p></center>
-				</div>
-			</div>
-	<?php }
-	}
+   <div class="row">
+    <div class="section-header">
+     <center><p class="section-subtitle"> Sorry, we couldn't find any results for hospitals in <strong><?php echo $search?></strong>.</p></center>
+   </div>
+ </div>
+ <?php }
+}
 } ?>
 </div>

@@ -12,6 +12,7 @@ if(!empty($search)){
 	<div class="row">
 
 		<?php
+    // fetch each row that matches the search query
 		while( $row = mysqli_fetch_array($search_query) ){
 			$num_rows++;
 			$facility = $row['facility_name'];
@@ -23,7 +24,6 @@ if(!empty($search)){
 			$lat = $row['latitude'];
 			$long = $row['longitude'];
 			?>
-			<!-- <div class="col-lg-6 col-sm-6 col-xs-6 box-item"> -->
 			<div class = "col-md-6 col-sm-6">
 				<div class="single-team">
 					<div class="team-details" style="text-align:left">
@@ -34,8 +34,7 @@ if(!empty($search)){
 								<?php echo "<li>{$suburb} {$postcode}</li>"?>
 								<?php echo "<li>{$sport}</li>"?>
 								<?php echo "<li> <i class='lnr lnr-map-marker'>
-								<a target='_blank' href='http://maps.google.com/maps?q= $lat,$long'>Open in maps</a>
-							</i>"?>
+								<a target='_blank' href='http://maps.google.com/maps?q= $lat,$long'>Open in maps</a></i>"?>
 						</ul>
 					</div>
 				</div>
