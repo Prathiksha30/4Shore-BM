@@ -45,7 +45,7 @@ include 'php/connect_db.php';
               <a class="nav-link page-scroll" href="#hero-area">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="regVic.html">Regional Victoria</a>
+              <a class="nav-link page-scroll" href="php/regions.php">Regional Victoria</a>
             </li>
             <li class="nav-item">
               <a class="nav-link page-scroll" href="industries.php">Industries</a>
@@ -60,7 +60,7 @@ include 'php/connect_db.php';
         <a class="page-scroll" href="#hero-area">Home</a>
       </li>
       <li>
-        <a class="page-scroll" href="regVic.html">Regional Victoria</a>
+        <a class="page-scroll" href="php/regions.php">Regional Victoria</a>
       </li>
       <li>
         <a class="page-scroll" href="industries.php">Industries</a>
