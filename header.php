@@ -10,9 +10,10 @@ include 'php/connect_db.php';
   <meta name="keywords" content="Bootstrap, Parallax, Template, Registration, Landing">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="author" content="Grayrids">
-  <title>Beyond Melbourne</title>
+  <title>beyondMEL</title>
 
   <!-- Bootstrap CSS -->
+  <link rel="shortcut icon" href="img/icon-log.png">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/line-icons.css">
@@ -34,7 +35,7 @@ include 'php/connect_db.php';
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a href="index.php" class="navbar-brand"><img class="img-fulid" src="img/BM.png" alt=""></a>
+          <a href="index.php" class="navbar-brand"><img class="img-fulid" src="img/BM3.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <i class="lnr lnr-menu"></i>
           </button>
