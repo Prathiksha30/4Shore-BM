@@ -13,7 +13,7 @@
         <div class="col-md-6 col-sm-6">
           <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
             <div class="icon">
-              <a href= "regVic.html"><i class="lnr lnr-map"></i></a>
+              <a href= "php/regions.php"><i class="lnr lnr-map"></i></a>
             </div>
             <h4>Search by Suburb</h4>
             <p>Have a place in mind? Search for a specific suburb and find hospitals, schools and sport facilities in the area.</p>

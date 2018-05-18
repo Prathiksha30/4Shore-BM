@@ -27,6 +27,7 @@ include '/php/connect_db.php';
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript">
     //gets list of industries from database to populate drop-down menu
+    var x;
     function getIndustry() {
   	$('#region').empty();
   	$('#region').append("<option>Loading......</option>");
@@ -49,16 +50,19 @@ include '/php/connect_db.php';
    }
     // displays relevant viz on iframe
     function getData (sel) {
-        var data="";
+        var data = "";
         var text = "";
         data = (sel.options[sel.selectedIndex].text);
         text = encodeURIComponent(data);
         console.log(text);
         console.log(data);
+        x.style.display = "block";
         iframe = document.getElementById('myIframe');
         iframe.src = "https://jkang94.shinyapps.io/prats/" + '?Industry=' +text;
     }
     $(document).ready(function(){
+    x = document.getElementById('iframeDiv');
+    x.style.display = "none";
     getIndustry(); // call function when page loads
     iframe = document.getElementById('myIframe');
     iframe.src = ""; // when nothing is selected do not display iframe of shiny viz
@@ -124,8 +128,11 @@ include '/php/connect_db.php';
       </div> 
     </div> 
   </header>
+  <div class="embed-responsive embed-responsive-16by9" id="iframeDiv">
+          <iframe id="myIframe" class="embed-responsive-item" allowfullscreen></iframe>
+  </div>
   <!-- Section to display iFrame with Shiny viz -->
-  <section id="blog" class="section">
+  <!-- <section id="blog" class="section">
     <div class="mydiv">
       <div class="container">
         <div class="embed-responsive embed-responsive-16by9">
@@ -135,7 +142,15 @@ include '/php/connect_db.php';
       <div class="text">
         <h6 id="result"></h6>
       </div>
-    </section>          
+    </section>  -->       
+    <section>
+      <div class="container">
+        <br />
+        <div class="text">
+        <h6 id="result">  </h6>
+      </div>
+      </div>
+    </section>  
   </header>
 </body>
 </html>

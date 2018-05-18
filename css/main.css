@@ -1273,7 +1273,7 @@ footer {
  /*CUSTOM CSS*/
  #hero-area2 {
   background: url(../img/header2.jpg) fixed no-repeat;
-  background-size: cover;
+ /* background-size: cover;*/
   color: #fff;
   overflow: hidden;
   position: relative;
@@ -1341,9 +1341,8 @@ footer {
 
 #customHero {
   background: url(../img/bg1.jpg) fixed no-repeat;
-  background-size: cover;
   color: #fff;
-  overflow: hidden;
+  /*overflow: hidden;*/
   position: relative;
 }
 
@@ -1358,7 +1357,7 @@ footer {
 }
 
 #customHero .contents {
-  padding: 40px 0 130px;
+  padding: 10px 0 30px; /*40px 0 130px;*/
 }
 
 #customHero .contents h1 {
