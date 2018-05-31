@@ -77,7 +77,7 @@ include 'php/connect_db.php';
         <div class="contents text-center">
           <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Explore your new start in regional Victoria</h1>
           <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">Planning to start your career in regional Victoria? Make yourself aware of the numerous industries in regional Victoria and find information about rental prices and more!</p>
-            <a href="#services" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Scroll Down</a>
+            <!-- <a href="#services" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Scroll Down</a> -->
           </div>
         </div>
       </div> 

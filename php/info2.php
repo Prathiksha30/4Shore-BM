@@ -169,7 +169,7 @@ if(!empty($search)){
             pcodeSchool = markerSchool[s].postcode;
             addSchool = streetAddrSchool + " " + pcodeSchool;
             var latlng = new google.maps.LatLng(latS, lngS);
-            console.log("Marker School: "+latS +","+lngS);
+            //console.log("Marker School: "+latS +","+lngS);
             createMarker(latlng, name, addSchool);
 
         }

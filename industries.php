@@ -8,7 +8,6 @@ include '/php/connect_db.php';
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="keywords" content="Bootstrap, Parallax, Template, Registration, Landing">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="author" content="Grayrids">
 <link rel="shortcut icon" href="img/icon-log.png">
 <!-- Bootstrap CSS -->
@@ -58,7 +57,7 @@ include '/php/connect_db.php';
       console.log(data);
       x.style.display = "block";
       iframe = document.getElementById('myIframe');
-      iframe.src = "https://jkang94.shinyapps.io/prats/" + '?Industry=' +text;
+      iframe.src = "https://josephkang.shinyapps.io/final/" + '?Industry=' +text;
   }
   $(document).ready(function(){
   x = document.getElementById('iframeDiv');
@@ -153,6 +152,7 @@ include '/php/connect_db.php';
   </section>  
 </header>
 </body>
+<div class="content" style="min-height: calc(100vh - 70px);"></div>
 </html>
 <?php
 include 'footer.html';
@@ -165,4 +165,13 @@ iframe {
   width: 100%;
   height: 100%;
 }
+
+ @media ( max-width:400px ) {
+ iframe{ width: 50%;
+ height: "1388px"; }
+ }
+@media ( min-width:401px ) and ( max-width:800px ) {
+ iframe { width: 50%; 
+ height: "1388px";}
+ }
 </style>

@@ -79,7 +79,6 @@
             <div class="active-cyan-4 mb-4" id="search_text">
                   <input type="text" name="region" id="region" class="form-control input-lg" autocomplete="off" placeholder="Start by typing a suburb here. Ex: Ballarat" />
             </div>
-            <!-- <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Download</a> -->
           </div>
         </div>
       </div> 
@@ -116,18 +115,20 @@
         <!-- List of public amenities col-lg-3 col-md-6 col-xs-12
         col-lg-10 col-md-6 col-xs-12-->
         <br>
-        <div class="col-xs-6 col-md-4" id="result" style="overflow-y:scroll; height: 520px; width: 100%;"></div>
+        <div class="col-xs-6 col-md-4" id="result" style="overflow-y:scroll; height: 520px; width: 100%; float:left;"></div>
         <div class="col-xs-12 col-md-8" id="result" style="float: right;">
           <div class="map-canvas" id="map-canvas"></div>
           <br />
         </div>
+
       </div> 
     </div>
   <!-- </section>   -->
 </section>  
 <br /> <br />
 </body>
-
+<div class="content" style="min-height: calc(100vh - 70px);">
+  </div>
 </html>
   <!-- Footer Section Start -->
 <footer style="position: relative; width: 100%; clear: both; bottom: 0px;">          
@@ -178,7 +179,9 @@
 <script src="../js/main.js"></script>
 
 <script type="text/javascript">
+var searchRegion;
   $(document).ready(function(){
+    
      var x = document.getElementById("mydiv");
      var y = document.getElementById("custom");
      y.style.display = "none";
@@ -198,46 +201,76 @@
                 }));
              }
          })
-       }
-   });
+       },
+       updater: function(search){
+          console.log("You selected: " + search);
+          var m = document.getElementById('map-canvas');
+          m.style.display = "block";
+          //var search = $('#region').val();
+          /*if(!($('#region').val().match(/[A-Za-z]+/)) || ($('#region').val().match(/\d+/)))*/
+          if(!(search.match(/[A-Za-z]+/)) || (search.match(/\d+/))){
+              alert("Make sure you enter a valid suburb name!");
+          }
+          else{
+            $.ajax({
+              url:'info2.php',
+              data:{search, search},
+              type:'GET',
+              success:function(data){
+                if(!data.error){
+                  $('#result').html(data);
+                  console.log("inside if");
+                  x.style.display ="block";
+                  y.style.display = "block";
+              }
+              else{
+                  x.style.display ="none";
+              }
+            }
+          });
+        }
+
+          searchRegion = search;
+          console.log(searchRegion+" search region!!");
+      }
+    });
      $('#region').keyup(function(e){
       var m = document.getElementById('map-canvas');
       m.style.display = "block";
       if(e.keyCode == 13)
       {
-          var search = $('#region').val();
-          if(!($('#region').val().match(/[A-Za-z]+/)) || ($('#region').val().match(/\d+/))){
-            // Your code here
-            alert("Make sure you enter a valid suburb name!");
+        var search = searchRegion;
+        if(!(search.match(/[A-Za-z]+/)) || (search.val().match(/\d+/))){
+          alert("Make sure you enter a valid suburb name!");
         }
         else{
-          console.log(search);
-          $.ajax({
-            url:'info2.php',
-            data:{search, search},
-            type:'GET',
-            success:function(data){
-              if(!data.error){
-                $('#result').html(data);
-                console.log("inside if");
-                x.style.display ="block";
-                y.style.display = "block";
+        //console.log(search);
+        $.ajax({
+          url:'info2.php',
+          data:{search, search},
+          type:'GET',
+          success:function(data){
+            if(!data.error){
+              $('#result').html(data);
+              //console.log("inside if");
+              x.style.display ="block";
+              y.style.display = "block";
             }
             else{
-                x.style.display ="none";
+              x.style.display ="none";
             }
-
+          }
+        });
         }
-    });
       }
-  }
-});
-   });
+    });
+  });
 // on click for All
 function allFunc(){
   var x = document.getElementById("mydiv");
   x.style.display = "none";
-  var search = $('#region').val();
+  var search = searchRegion;
+  //var search = $('#region').val();
   console.log(search);
   $.ajax({
     url:'info2.php',
@@ -260,7 +293,9 @@ function sportFunc(){
   console.log("button clicked");
   var x = document.getElementById("mydiv");
   x.style.display = "none";
-  var search = $('#region').val();
+  var search = searchRegion;
+  //console.log('Sport button '+ search);
+  //var search = $('#region').val();
   $.ajax({
     url:'sportMap.php',
     data:{search, search},
@@ -282,7 +317,8 @@ function schFunc(){
   console.log("school button clicked");
   var x = document.getElementById("mydiv");
   x.style.display = "none";
-  var search = $('#region').val();
+  var search = searchRegion;
+  //var search = $('#region').val();
   $.ajax({
     url:'schoolMap.php',
     data:{search, search},
@@ -303,7 +339,8 @@ function hospFunc(){
   console.log("hospital button clicked");
   var x = document.getElementById("mydiv");
   x.style.display = "none";
-  var search = $('#region').val();
+  var search = searchRegion;
+  //var search = $('#region').val();
   $.ajax({
     url:'hospMap.php',
     data:{search, search},

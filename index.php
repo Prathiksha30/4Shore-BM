@@ -7,8 +7,6 @@
   <!-- Main Section Start -->
   <section id="services" class="section">
     <div class="container">
-      <div class="section-header">
-      </div>
       <div class="row">
         <div class="col-md-6 col-sm-6">
           <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
